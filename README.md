@@ -1,7 +1,7 @@
 # MIT-6.824
 
 ## 1.MapReduce
-###  <pre> 1.Material </pre>
-####  [video](link) 
-### 2.Summary
-### 3. Lab
+### &emsp;1.Material 
+#### &emsp; &emsp; [video](link) 
+### &emsp; 2.Summary
+### &emsp; 3. Lab
