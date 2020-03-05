@@ -2,8 +2,7 @@
 
 ## 1. MapReduce
 ### &emsp; 1. Material 
-&emsp; &emsp; [Video](https://www.youtube.com/watch?v=cQP8WApzIQQ) &emsp; [Handout](https://pdos.csail.mit.edu/6.824/notes/l01.txt) &emsp;[Reference](http://airekans.github.io/cloud-computing/2014/01/25/mapreduce-intro)    
-&emsp; 
+&emsp; &emsp; [Video](https://www.youtube.com/watch?v=cQP8WApzIQQ) &emsp; [Handout](https://pdos.csail.mit.edu/6.824/notes/l01.txt) &emsp;[Reference](http://airekans.github.io/cloud-computing/2014/01/25/mapreduce-intro)
 ### &emsp; 2. Summary
 &emsp; &emsp; MapReduce是一种分布式计算模型，用于解决大于1TB数据量的大数据计算处理。著名的开源项目Hadoop和Spark在计算方面都实现的是MapReduce模型。 
   
