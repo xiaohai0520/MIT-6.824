@@ -22,3 +22,18 @@ Master失效如何处理？因为master是单点，只能人工干预，系统�
 在第一部分编写简单的MapReduce程序（Mapper和Reducer）。在第二部分编写master，master往workers分配任务，处理workers的错误。  
 
 注意，MapReduce可以不需要很多机器，在同一台机器上，MapReduce将工作分配到一系列的工作线程（Golang中用goroutine实现）上，这些线程担任Mapper或Reducer，Master则是一个特殊的线程，它调度Mapper和Reducer，为它们分配工作。 
+
+## 1. Raft
+### 1. Material 
+[Video](https://www.youtube.com/watch?v=64Zp3tzNbpE) &emsp; [Handout](https://pdos.csail.mit.edu/6.824/notes/l01.txt) &emsp;[Reference](https://github.com/maemual/raft-zh_cn)
+### 2. Summary
+不同于Paxos算法直接从分布式一致性问题出发推导出来，Raft算法则是从多副本状态机的角度提出，用于管理多副本状态机的日志复制。Raft实现了和Paxos相同的功能，它将一致性分解为多个子问题：Leader选举（Leader election）、日志同步（Log replication）、安全性（Safety）、日志压缩（Log compaction）、成员变更（Membership change）等。同时，Raft算法使用了更强的假设来减少了需要考虑的状态，使之变的易于理解和实现。
+
+Raft将系统中的角色分为领导者（Leader）、跟从者（Follower）和候选人（Candidate）：
+
+Leader：接受客户端请求，并向Follower同步请求日志，当日志同步到大多数节点上后告诉Follower提交日志。
+Follower：接受并持久化Leader同步的日志，在Leader告之日志可以提交之后，提交日志。
+Candidate：Leader选举过程中的临时角色。
+
+### 3. Lab
+
